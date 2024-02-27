@@ -1,0 +1,21 @@
+header>img {
+    border-radius: 50%;
+    height: 100px;
+
+}
+
+body {
+    background-color: rgb(149, 149, 205);
+}
+
+a>button {
+    border: 20px;
+    width: 100px;
+    margin: auto;
+    margin-top: 10px;
+    height: 20px;
+    text-align: center;
+    padding: 6px;
+    border-radius: 9px;
+
+}

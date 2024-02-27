@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador de Senha</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Validador de Senha</h2>
+    <input type="password" id="passwordInput" placeholder="Digite sua senha">
+    <button onclick="validarSenha()">Validar</button>
+    <p id="validationMessage"></p>
+  </div>
+
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  background-image: url(../img/black-prism-concept-ai-generated.jpg);
+    background-repeat: no-repeat;
+    background-position: absolute;
+    background-size: 100%;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p#validationMessage {
+  margin-top: 10px;
+  color: #333;
+}
+
+  </style>
+
+  <script>
+    function validarSenha() {
+    var senha = document.getElementById('passwordInput').value;
+    var messageElement = document.getElementById('validationMessage');
+    
+    // Verificar se a senha tem pelo menos 8 caracteres
+    if (senha.length < 8) {
+        messageElement.innerText = 'A senha deve ter pelo menos 8 caracteres.';
+        return;
+    }
+
+    // Verificar se a senha contém pelo menos uma letra maiúscula
+    if (!/[A-Z]/.test(senha)) {
+        messageElement.innerText = 'A senha deve conter pelo menos uma letra maiúscula.';
+        return;
+    }
+
+    // Verificar se a senha contém pelo menos uma letra minúscula
+    if (!/[a-z]/.test(senha)) {
+        messageElement.innerText = 'A senha deve conter pelo menos uma letra minúscula.';
+        return;
+    }
+
+    // Verificar se a senha contém pelo menos um número
+    if (!/[0-9]/.test(senha)) {
+        messageElement.innerText = 'A senha deve conter pelo menos um número.';
+        return;
+    }
+
+    // Verificar se a senha contém pelo menos um caractere especial
+    if (!/[^A-Za-z0-9]/.test(senha)) {
+        messageElement.innerText = 'A senha deve conter pelo menos um caractere especial.';
+        return;
+    }
+
+    // Se a senha atender a todos os critérios, exibir mensagem de sucesso
+    messageElement.innerText = 'Senha válida!';
+}
+
+  </script>
+</body>
+</html>
